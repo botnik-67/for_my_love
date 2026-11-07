@@ -581,31 +581,34 @@
     </footer>
 
     <!-- Секция: Секретное конверт-послание -->
-<section class="max-w-md mx-auto my-10 p-4 text-center">
+<section class="max-w-md mx-auto my-12 p-4 text-center relative">
     <h3 class="text-xl font-bold text-pink-600 mb-4">💌 Для твоего сердца</h3>
     
     <!-- Контейнер конверта -->
-    <div id="envelope-wrapper" class="relative w-64 h-44 mx-auto cursor-pointer perspective-1000">
+    <div id="envelope-wrapper" class="relative w-64 h-44 mx-auto cursor-pointer perspective-1000 z-20">
         <!-- Сам конверт -->
         <div id="envelope" class="w-full h-full bg-pink-300 rounded-b-xl shadow-lg relative transition-all duration-500 flex items-center justify-center border-2 border-pink-400">
             <!-- Крышка конверта -->
-            <div id="envelope-flap" class="absolute top-0 left-0 w-0 h-0 border-l-[128px] border-l-transparent border-r-[128px] border-r-transparent border-t-[90px] border-t-pink-400 origin-top transition-transform duration-500 z-20"></div>
+            <div id="envelope-flap" class="absolute top-0 left-0 w-0 h-0 border-l-[128px] border-l-transparent border-r-[128px] border-r-transparent border-t-[90px] border-t-pink-400 origin-top transition-transform duration-500 z-30"></div>
             
             <!-- Печать/Сердечко на конверте -->
-            <div id="envelope-seal" class="absolute z-30 text-3xl transition-opacity duration-300">
+            <div id="envelope-seal" class="absolute z-40 text-3xl transition-opacity duration-300">
                 💌
-            </div>
-
-            <!-- Письмо внутри -->
-            <div id="letter" class="absolute bottom-2 w-56 bg-white p-4 rounded-lg shadow-md border border-pink-100 text-gray-700 text-sm leading-relaxed transition-all duration-700 z-10 opacity-0 transform translate-y-4">
-                <p class="font-bold text-pink-600 mb-2">Моя любимая! ❤️</p>
-                <p id="letter-text">
-                    Солнышко моё любимое, то что я чувствую у тебе, это просто вулкан чувств, я не могу это передать словами. Мои чувства слишком велики, мое безумие - это ты, и я не преувеличиваю, я не могу прожить без тебя нормально и дня, я хочу видеть тебя каждый день, находить тебя во всех вещах и деталях, ты то что вызывает во мне счастье, и я хочу с тобой разделить остаток своей жизни, просто будь со мной...... ты мой пингвин и я подарил тебе красивый камень, так пожалуйста раздели со мной все моменты жизни, ибо я знаю что если ты рядом то все преграды ни по чем, ты самое лучшее что случалось со мной в жизни - ты и есть моя жизнь....
-                </p>
             </div>
         </div>
     </div>
-    <p class="text-xs text-pink-400 mt-3">Нажми на конверт, чтобы открыть</p>
+    <p class="text-xs text-pink-400 mt-3 relative z-20">Нажми на конверт, чтобы открыть</p>
+
+    <!-- Письмо теперь лежит ВНЕ конверта, выезжает красиво и плавно поверх всего -->
+    <div id="letter" class="absolute left-1/2 -translate-x-1/2 bottom-24 w-80 md:w-96 bg-white p-6 rounded-2xl shadow-2xl border-2 border-pink-200 text-gray-700 text-sm leading-relaxed transition-all duration-700 z-50 opacity-0 pointer-events-none transform translate-y-10 scale-95">
+        <p class="font-bold text-pink-600 mb-2 text-base">Моя любимая! ❤️</p>
+        <p id="letter-text" class="text-left">
+            Солнышко моё любимое, то что я чувствую у тебе, это просто вулкан чувств, я не могу это передать словами. Мои чувства слишком велики, мое безумие - это ты, и я не преувеличиваю, я не могу прожить без тебя нормально и дня, я хочу видеть тебя каждый день, находить тебя во всех вещах и деталях, ты то что вызывает во мне счастье, и я хочу с тобой разделить остаток своей жизни, просто будь со мной...... ты мой пингвин и я подарил тебе красивый камень, так пожалуйста раздели со мной все моменты жизни, ибо я знаю что если ты рядом то все преграды ни по чем, ты самое лучшее что случалось со мной в жизни - ты и есть моя жизнь
+        </p>
+        <button id="close-letter" class="mt-4 px-4 py-1.5 bg-pink-100 hover:bg-pink-200 text-pink-700 rounded-full text-xs font-medium transition-colors">
+            Свернуть письмо ✖
+        </button>
+    </div>
 </section>
 
 <!-- Скрипт для открытия конверта -->
@@ -614,6 +617,7 @@
     const flap = document.getElementById('envelope-flap');
     const seal = document.getElementById('envelope-seal');
     const letter = document.getElementById('letter');
+    const closeLetterBtn = document.getElementById('close-letter');
     let isOpen = false;
 
     envelopeWrapper.addEventListener('click', () => {
@@ -622,63 +626,59 @@
             flap.style.transform = 'rotateX(180deg)';
             seal.style.opacity = '0';
             
-            // Выдвигаем письмо наверх
-            setTimeout(() => {
-                letter.classList.remove('opacity-0', 'translate-y-4');
-                letter.classList.add('opacity-100', '-translate-y-16', 'z-40');
-            }, 300);
+            // Плавно показываем письмо поверх всего
+            letter.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-10', 'scale-95');
+            letter.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0', 'scale-100');
 
             isOpen = true;
-        } else {
-            // Закрываем обратно при повторном клике
-            letter.classList.remove('opacity-100', '-translate-y-16', 'z-40');
-            letter.classList.add('opacity-0', 'translate-y-4');
-
-            setTimeout(() => {
-                flap.style.transform = 'rotateX(0deg)';
-                seal.style.opacity = '1';
-            }, 400);
-
-            isOpen = false;
         }
     });
+
+    // Кнопка закрытия письма
+    closeLetterBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // чтобы клик не уходил на конверт
+        letter.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0', 'scale-100');
+        letter.classList.add('opacity-0', 'pointer-events-none', 'translate-y-10', 'scale-95');
+
+        setTimeout(() => {
+            flap.style.transform = 'rotateX(0deg)';
+            seal.style.opacity = '1';
+        }, 300);
+
+        isOpen = false;
+    });
 </script>
-    <!-- Скрипт мини-игры "Поймай сердечко" -->
+
+<!-- Скрипт мини-игры "Поймай сердечко" (исправленный чистый код без ошибок) -->
 <script>
     function createHeart() {
         const heart = document.createElement('div');
         heart.classList.add('falling-heart');
         
-        // Случайные эмодзи сердечек и милых символов
         const heartsSymbols = ['❤️', '💖', '💘', '✨', '💕', '🤍'];
         heart.textContent = heartsSymbols[Math.floor(Math.random() * heartsSymbols.length)];
         
-        // Случайная позиция по горизонтали, размер и скорость падения
         heart.style.left = Math.random() * 100 + 'vw';
         heart.style.fontSize = (Math.random() * 1.5 + 1) + 'rem';
         
-        const duration = Math.random() * 3 + 3; // от 3 до 6 секунд
+        const duration = Math.random() * 3 + 3;
         heart.style.animationDuration = duration + 's';
 
         document.body.appendChild(heart);
 
-        // Клик по сердечку (лопаем его с эффектом)
         heart.addEventListener('click', () => {
             heart.style.transform = 'scale(1.5)';
             heart.style.opacity = '0';
             setTimeout(() => heart.remove(), 200);
         });
 
-        // Удаляем элемент после завершения анимации
         setTimeout(() => {
             heart.remove();
         }, duration * 1000);
     }
 
-    // Запускаем появление нового сердечка каждые 400 миллисекунд
     setInterval(createHeart, 400);
 </script>
-
 
 </body>
 </html>
