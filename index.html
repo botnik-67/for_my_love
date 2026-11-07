@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Для тебя ❤️</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            rosewood: '#2b1e1e',
+            softrose: '#fdf8f6',
+            accent: '#e29578',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-softrose text-rosewood font-sans antialiased selection:bg-accent/20">
+    <section class="min-h-screen flex flex-col justify-center items-center text-center p-6 relative bg-gradient-to-b from-rose-50 to-softrose">
+        <span class="text-sm uppercase tracking-widest text-stone-500 mb-3">Пусть этот сайт хранит наши воспоминания.....</span>
+        <h1 class="font-serif text-5xl md:text-7xl font-semibold text-stone-800 mb-6 leading-tight">
+            Начало истории нашей любви
+        </h1>
+        <p class="max-w-md text-stone-600 text-lg mb-10 font-light">
+            Здесь я собрал все самое важное, что произоошло между нами за это время
+        </p>
+        <a href="#story" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-stone-800 text-white hover:bg-stone-700 transition-all duration-300 shadow-sm text-sm">
+            Смотреть дальше ↓
+        </a>
+    </section>
+
+
+    <section class="py-16 px-6 max-w-4xl mx-auto text-center border-y border-stone-200/60">
+        <p class="font-serif text-2xl md:text-3xl italic text-stone-700">
+            Моё самое любимое воспоминание - это каждый день, проведенный с тобой
+        </p>
+        <div class="mt-6 flex justify-center gap-8 text-stone-500 text-sm">
+            <div>
+                <span class="block text-2xl font-serif text-stone-800">1 месяц и 15 дней</span>
+                <span>мы уже вместе, представляешь?</span>
+            </div>
+            <div class="border-r border-stone-300"></div>
+            <div>
+                <span class="block text-2xl font-serif text-stone-800">100+</span>
+                <span>поцелуев, улыбок и планов друг на друга</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="story" class="py-24 px-6 max-w-4xl mx-auto space-y-20">
+      <h2 class="font-serif text-3xl md:text-4xl text-center mb-16">Как всё начиналось</h2>
+
+
+      <div class="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-12">
+        <div class="w-full md:w-1/2 aspect-[4/3] rounded-2xl overflow-hidden bg-stone-200 shadow-md">
+          <img src="images/moment_2.jpg" alt="Поход в кальянку" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="w-full md:w-1/2 space-y-3">
+          <span class="text-xs uppercase tracking-wider text-accent font-medium">2 сентября 2026 года</span>
+          <h3 class="font-serif text-2xl text-stone-800">В принципе начало наших взаимоотношений</h3>
+          <p class="text-stone-600 leading-relaxed font-light">
+            Здесь я хочу вспомнить, тот факт, что наше взаимодействие, дальнейшее общение и в конечном итоге отношения, это не случайность, мы были созданы чтобы встретить друг друга, у нас очень много общего и в принципе мы понимаем друг друга с получслова, это ли не судьба?
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+        <div class="w-full md:w-1/2 aspect-[4/3] rounded-2xl overflow-hidden bg-stone-200 shadow-md">
+          <img src="images/moment_1.jpg" alt="Первое совместное фото после начала отношений" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="w-full md:w-1/2 space-y-3">
+          <span class="text-xs uppercase tracking-wider text-accent font-medium ">29 сентября 2026 года</span>
+          <h3 class="font-serif text-2xl text-stone-800">Одна из первых наших фотографий после начала отношений</h3>
+          <p class="text-stone-600 leading-relaxed font-light">
+            Смотря на это фото, я чувствую, как же сильно мне повезло, что повстречал тебя и у нас начались наши прекрасные отношения, которые продляться всю оставшуюся жизнь, можно сказать что именно с этой фотографии началась наша с тобой история.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-stone-100/60 px-6">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="font-serif text-3xl md:text-4xl text-center mb-12">Галлерея наших воспоминаний</h2>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+          <div class="aspect-square rounded-xl overflow-hidden bg-stone-200 shadow-sm">
+            <img src="images/moment_3.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="aspect-square rounded-xl overflow-hidden bg-stone-200 shadow-sm">
+            <img src="images/moment_4.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="aspect-square rounded-xl overflow-hidden bg-stone-200 shadow-sm">
+            <img src="images/moment_5.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="aspect-square rounded-xl overflow-hidden bg-stone-200 shadow-sm">
+            <img src="images/moment_6.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="aspect-square rounded-xl overflow-hidden bg-stone-200 shadow-sm">
+            <img src="images/moment_7.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="aspect-square rounded-xl overflow-hidden bg-stone-200 shadow-sm">
+            <img src="images/moment_8.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="aspect-square rounded-xl overflow-hidden bg-stone-200 shadow-sm">
+            <img src="images/moment_9.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="aspect-square rounded-xl overflow-hidden bg-stone-200 shadow-sm">
+            <img src="images/moment_10.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="aspect-square rounded-xl overflow-hidden bg-stone-200 shadow-sm">
+            <img src="images/moment_11.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="aspect-square rounded-xl overflow-hidden bg-stone-200 shadow-sm">
+            <img src="images/moment_12.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="aspect-square rounded-xl overflow-hidden bg-stone-200 shadow-sm">
+            <img src="images/moment_13.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="aspect-square rounded-xl overflow-hidden bg-stone-200 shadow-sm">
+            <img src="images/moment_14.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="aspect-square rounded-xl overflow-hidden bg-stone-200 shadow-sm">
+            <img src="images/moment_15.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="aspect-square rounded-xl overflow-hidden bg-stone-200 shadow-sm">
+            <img src="images/moment_16.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="aspect-square rounded-xl overflow-hidden bg-stone-200 shadow-sm">
+            <img src="images/moment_17.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="aspect-square rounded-xl overflow-hidden bg-stone-200 shadow-sm">
+            <img src="images/moment_18.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="aspect-square rounded-xl overflow-hidden bg-stone-200 shadow-sm">
+            <img src="images/moment_19.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="aspect-square rounded-xl overflow-hidden bg-stone-200 shadow-sm">
+            <img src="images/moment_20.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 px-6 max-w-2xl mx-auto">
+      <div class="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-stone-100 relative">
+        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-rose-100 text-rose-700 px-4 py-1 rounded-full text-xs font-medium">
+          Несколько очень важных слов
+        </div>
+        <h2 class="font-serif text-3xl text-center mb-6">Тебе, с любовью</h2>
+        <div class="space-y-4 text-stone-600 font-light leading-relaxed">
+          <p>
+            В этом письме я хочу выразить, все то, что чувствую к тебе, и если честно, слов недостаточно, но я очень сильно постараюсь. Я безумно счастлив, что ты появилась в моей жизни, мне не передать словами наскольк я ценю этот момент, я благодарен судьбе, что повстречал тебя и искренне верю, что мы с тобой будем вместе до конца жизни. С каждым днем я обожаю тебя все больше и больше, ты тот человек которого я искренне и всем сердцем полюбил, ты моя настоящая любовь. Я очень сильно ценю тебя, и ты являешься для меня самым дорогим человеком в жизни, ради тебе я готов перевернуть вселенную. И хоть это и метафора, но если бы я мог я бы это сделал.
+          </p>
+          <p>
+            Я схожу без ума от тебя, ты мой наркотик, пока ты веришь в меня, я могу сделать все, что угодно, ты моя сама главная мотивация к жизни. Я хочу разделить с тобой остаток своей жизни, хочу гордо идти возле тебя как твой паень, и в дальнейшем муж, и я хочу чтобы мы с тобой просто получали удовольствие от того, что находимся рядом.
+          </p>
+        </div>
+        <div class="mt-8 text-right font-serif italic text-stone-800 text-xl">
+          Навсегда твоя какашечка ❤️
+        </div>
+      </div>
+    </section>
+
+    <!-- МУЗЫКАЛЬНЫЙ БЛОК -->
+<section class="py-16 px-6 max-w-xl mx-auto">
+  <div class="bg-white/80 backdrop-blur-md p-6 rounded-3xl shadow-sm border border-stone-100 flex items-center gap-5">
+    
+    <!-- Кнопка Play/Pause с анимацией -->
+    <button id="playBtn" class="w-14 h-14 rounded-full bg-accent text-white flex items-center justify-center shrink-0 hover:scale-105 transition-transform shadow-md cursor-pointer">
+      <!-- Иконка Play -->
+      <svg id="playIcon" class="w-6 h-6 translate-x-0.5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+      <!-- Иконка Pause (скрыта по умолчанию) -->
+      <svg id="pauseIcon" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+      </svg>
+    </button>
+
+    <!-- Информация о треке -->
+    <div class="flex-1 min-w-0">
+      <div class="flex items-center gap-2">
+        <span class="text-xs uppercase tracking-wider text-accent font-medium">Наша музыка</span>
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-accent/50 animate-pulse"></span>
+      </div>
+      <h3 id="trackTitle" class="font-serif text-xl text-stone-800 truncate mt-0.5">Название первого трека</h3>
+      <p id="trackArtist" class="text-stone-500 text-xs font-light truncate">Исполнитель</p>
+    </div>
+
+    <!-- Кнопка переключения трека -->
+    <button id="nextBtn" class="text-stone-400 hover:text-stone-700 p-2 transition-colors text-sm" title="Следующий трек">
+      ⏭
+    </button>
+  </div>
+
+  <!-- Аудио-элемент (скрытый) -->
+  <audio id="audioPlayer" preload="auto">
+    <source src="assets/music/track1.mp3" type="audio/mpeg">
+    Ваш браузер не поддерживает аудио.
+  </audio>
+</section>
+
+<!-- Скрипт для управления плеером -->
+<script>
+  const audio = document.getElementById('audioPlayer');
+  const playBtn = document.getElementById('playBtn');
+  const playIcon = document.getElementById('playIcon');
+  const pauseIcon = document.getElementById('pauseIcon');
+  const nextBtn = document.getElementById('nextBtn');
+  const trackTitle = document.getElementById('trackTitle');
+  const trackArtist = document.getElementById('trackArtist');
+
+  // Список твоих песен
+  const playlist = [
+    {
+      title: "Это чисто наша песня...",
+      artist: "Обезьянки",
+      src: "music/Track_1.mp3"
+    },
+    {
+      title: "Эта имба не контрится",
+      artist: "Это так грязно",
+      src: "music/Track_2.mp3"
+    }
+  ];
+
+  let currentTrackIndex = 0;
+
+  function loadTrack(index) {
+    audio.src = playlist[index].src;
+    trackTitle.textContent = playlist[index].title;
+    trackArtist.textContent = playlist[index].artist;
+  }
+
+  // Кнопка Play/Pause
+  playBtn.addEventListener('click', () => {
+    if (audio.paused) {
+      audio.play();
+      playIcon.classList.add('hidden');
+      pauseIcon.classList.remove('hidden');
+    } else {
+      audio.pause();
+      playIcon.classList.remove('hidden');
+      pauseIcon.classList.add('hidden');
+    }
+  });
+
+  // Кнопка переключения следующего трека
+  nextBtn.addEventListener('click', () => {
+    currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+    loadTrack(currentTrackIndex);
+    audio.play();
+    playIcon.classList.add('hidden');
+    pauseIcon.classList.remove('hidden');
+  });
+
+  // Инициализация первого трека
+  loadTrack(currentTrackIndex);
+</script>
+
+    <!-- СЧЁТЧИК ВРЕМЕНИ ВМЕСТЕ -->
+<section class="py-12 px-6 max-w-3xl mx-auto text-center">
+  <div class="bg-white/80 backdrop-blur-md p-8 rounded-3xl shadow-sm border border-stone-100">
+    <h3 class="font-serif text-2xl text-stone-800 mb-6">Мы вместе уже:</h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+      <div class="bg-softrose p-4 rounded-2xl">
+        <span id="daysCount" class="block font-serif text-3xl md:text-4xl text-accent font-semibold">0</span>
+        <span class="text-xs uppercase tracking-wider text-stone-500 mt-1 block">дней</span>
+      </div>
+      <div class="bg-softrose p-4 rounded-2xl">
+        <span id="hoursCount" class="block font-serif text-3xl md:text-4xl text-accent font-semibold">0</span>
+        <span class="text-xs uppercase tracking-wider text-stone-500 mt-1 block">часов</span>
+      </div>
+      <div class="bg-softrose p-4 rounded-2xl">
+        <span id="minutesCount" class="block font-serif text-3xl md:text-4xl text-accent font-semibold">0</span>
+        <span class="text-xs uppercase tracking-wider text-stone-500 mt-1 block">минут</span>
+      </div>
+      <div class="bg-softrose p-4 rounded-2xl">
+        <span id="secondsCount" class="block font-serif text-3xl md:text-4xl text-accent font-semibold">0</span>
+        <span class="text-xs uppercase tracking-wider text-stone-500 mt-1 block">секунд</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Укажи здесь вашу дату в формате 'YYYY-MM-DDTHH:mm:ss' (например, '2023-10-14T15:30:00')
+  const startDate = new Date('2026-09-21T00:00:00');
+
+  function updateTimer() {
+    const now = new Date();
+    const diff = now - startDate;
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / 1000 / 60) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    document.getElementById('daysCount').textContent = days;
+    document.getElementById('hoursCount').textContent = hours;
+    document.getElementById('minutesCount').textContent = minutes;
+    document.getElementById('secondsCount').textContent = seconds;
+  }
+
+  setInterval(updateTimer, 1000);
+  updateTimer();
+</script>
+
+    <!-- ИНТЕРАКТИВНЫЕ КАРТОЧКИ -->
+<section class="py-16 px-6 max-w-4xl mx-auto">
+  <h2 class="font-serif text-3xl md:text-4xl text-center mb-10">За что я тебя люблю</h2>
+  
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    
+    <!-- Карточка 1 -->
+    <div class="group h-48 [perspective:1000px] cursor-pointer">
+      <div class="relative h-full w-full rounded-2xl shadow-sm transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+        <!-- Лицевая сторона -->
+        <div class="absolute inset-0 bg-white p-6 rounded-2xl border border-stone-100 flex flex-col items-center justify-center text-center [backface-visibility:hidden]">
+          <span class="text-accent text-2xl mb-2">✨</span>
+          <h3 class="font-serif text-xl text-stone-800">Твоя улыбка</h3>
+          <span class="text-xs text-stone-400 mt-2">наведи, чтобы узнать</span>
+        </div>
+        <!-- Обратная сторона -->
+        <div class="absolute inset-0 bg-accent text-white p-6 rounded-2xl flex items-center justify-center text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
+          <p class="font-light text-sm">Она одна на миллион я хочу видеть её каждое утро, ибо она наполняет меня счастьем</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Карточка 2 -->
+    <div class="group h-48 [perspective:1000px] cursor-pointer">
+      <div class="relative h-full w-full rounded-2xl shadow-sm transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+        <div class="absolute inset-0 bg-white p-6 rounded-2xl border border-stone-100 flex flex-col items-center justify-center text-center [backface-visibility:hidden]">
+          <span class="text-accent text-2xl mb-2">☕️</span>
+          <h3 class="font-serif text-xl text-stone-800">Наши уютные вечера</h3>
+          <span class="text-xs text-stone-400 mt-2">наведи, чтобы узнать</span>
+        </div>
+        <div class="absolute inset-0 bg-accent text-white p-6 rounded-2xl flex items-center justify-center text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
+          <p class="font-light text-sm">Когда мы с тобой просто находимся рядом друг с другом - это уже невероятное счатье для меня.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Карточка 3 -->
+    <div class="group h-48 [perspective:1000px] cursor-pointer">
+      <div class="relative h-full w-full rounded-2xl shadow-sm transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+        <div class="absolute inset-0 bg-white p-6 rounded-2xl border border-stone-100 flex flex-col items-center justify-center text-center [backface-visibility:hidden]">
+          <span class="text-accent text-2xl mb-2">💫</span>
+          <h3 class="font-serif text-xl text-stone-800">Твоя поддержка</h3>
+          <span class="text-xs text-stone-400 mt-2">наведи, чтобы узнать</span>
+        </div>
+        <div class="absolute inset-0 bg-accent text-white p-6 rounded-2xl flex items-center justify-center text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
+          <p class="font-light text-sm">Твоя вера в меня дает мне невероятное количество сил и я спосбен на все.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <!-- СЕКРЕТНАЯ КНОПКА-СЮРПРИЗ С ПИНГВИНОМ -->
+<section class="py-12 px-6 max-w-xl mx-auto text-center">
+  <div class="bg-white/80 backdrop-blur-md p-8 rounded-3xl shadow-sm border border-stone-100">
+    <h3 class="font-serif text-xl text-stone-800 mb-3">Скучаешь?</h3>
+    <p class="text-stone-500 text-sm font-light mb-6">Нажми на кнопку, чтобы получить порцию тепла</p>
+    
+    <button id="surpriseBtn" class="px-6 py-3 rounded-full bg-accent text-white hover:bg-accent/90 transition-all duration-300 shadow-sm text-sm font-medium cursor-pointer">
+      Нажми на меня ❤️
+    </button>
+
+    <!-- Вывод случайного сообщения и гифки -->
+    <div id="surpriseContent" class="mt-6 hidden transition-all duration-500">
+      <img id="penguinGif" src="" alt="Милый пингвин" class="w-40 h-40 object-cover rounded-2xl mx-auto mb-4 shadow-sm border border-stone-100">
+      <div id="surpriseText" class="font-serif italic text-stone-700 text-lg">
+        <!-- Сюда подставится текст -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Массив сюрпризов: у каждого своя фраза и своя гифка с пингвином
+  const surprises = [
+    {
+      text: "Где бы я ни был, мои мысли всегда возвращаются к тебе.",
+      gif: "gif/mom_2.gif"
+    },
+    {
+      text: "Ты — лучшее, что случалось в моей жизни.",
+      gif: "gif/mom_1.gif"
+    },
+    {
+      text: "Я хочу тебя обнять и никогда не отпускать!",
+      gif: "gif/mom_3.gif"
+    },
+    {
+      text: "Улыбнись! Я люблю тебя больше всего на свете.",
+      gif: "gif/mom_4.gif"
+    }
+  ];
+
+  const surpriseBtn = document.getElementById('surpriseBtn');
+  const surpriseContent = document.getElementById('surpriseContent');
+  const penguinGif = document.getElementById('penguinGif');
+  const surpriseText = document.getElementById('surpriseText');
+
+  surpriseBtn.addEventListener('click', () => {
+    // Выбираем случайную пару (текст + гифка)
+    const randomIndex = Math.floor(Math.random() * surprises.length);
+    const item = surprises[randomIndex];
+
+    // Подставляем данные
+    penguinGif.src = item.gif;
+    surpriseText.textContent = item.text;
+
+    // Показываем блок
+    surpriseContent.classList.remove('hidden');
+  });
+</script>
+
+    <footer class="py-8 text-center text-xs text-stone-400">
+      Сделано с любовью специально для тебя
+    </footer>
+</body>
+</html>
