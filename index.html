@@ -433,8 +433,149 @@
   });
 </script>
 
+
+    <!-- Секция: Купоны желаний -->
+<section class="max-w-md mx-auto my-8 p-6 bg-white/80 backdrop-blur-md rounded-2xl shadow-xl text-center">
+    <h3 class="text-xl font-bold text-pink-600 mb-2">🎁 Твои персональные купоны</h3>
+    <p class="text-sm text-gray-600 mb-4">Нажми на любой купон, чтобы активировать его!</p>
+    
+    <div id="coupons-container" class="space-y-3">
+        <!-- Купоны генерируются через скрипт ниже -->
+    </div>
+</section>
+
+<!-- Скрипт для работы купонов -->
+<script>
+    const coupons = [
+        "☕ Кофе или чай в постель в любое утро",
+        "🎬 Вечер кино с выбором фильма на твой вкус",
+        "🍕 Ужин приготовленный мной с особой любовью",
+        "💆‍♀️ Расслабляющий массаж плеч и спины",
+        "✨ Исполнение одного желания без очереди"
+    ];
+
+    const container = document.getElementById('coupons-container');
+
+    coupons.forEach((text, index) => {
+        const btn = document.createElement('button');
+        btn.className = "w-full p-3 bg-pink-50 hover:bg-pink-100 text-pink-700 font-medium rounded-xl border border-pink-200 transition-all duration-200 flex items-center justify-between shadow-sm";
+        btn.innerHTML = `<span>${text}</span> <span class="text-xs bg-pink-200 text-pink-800 px-2 py-1 rounded-full">Активировать</span>`;
+        
+        btn.onclick = () => {
+            btn.classList.add('opacity-50', 'line-through', 'bg-gray-100', 'text-gray-400', 'border-gray-200');
+            btn.querySelector('span:last-child').textContent = "Использовано ❤️";
+            btn.disabled = true;
+        };
+
+        container.appendChild(btn);
+    });
+</script>
+    <style>
+    /* Стили для падающих сердечек */
+    .falling-heart {
+        position: fixed;
+        top: -10%;
+        z-index: 9999;
+        user-select: none;
+        cursor: pointer;
+        animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+        0% {
+            transform: translateY(0) rotate(0deg);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(110vh) rotate(360deg);
+            opacity: 0.2;
+        }
+    }
+</style>
+
+<!-- Секция с генератором комплиментов -->
+<section class="max-w-md mx-auto my-8 p-6 bg-white/80 backdrop-blur-md rounded-2xl shadow-xl text-center">
+    <h3 class="text-xl font-bold text-pink-600 mb-3">💖 Нажми для порции нежности</h3>
+    
+    <!-- Кнопка, на которую нужно нажимать -->
+    <button id="compliment-btn" class="px-6 py-3 bg-pink-500 hover:bg-pink-600 text-white font-medium rounded-xl shadow-md transition-all duration-200 active:scale-95">
+        Получить комплимент ✨
+    </button>
+
+    <!-- Место, где будет появляться текст -->
+    <p id="compliment-text" class="mt-4 text-gray-700 text-lg font-medium min-h-[3rem] flex items-center justify-center transition-opacity duration-300">
+        Нажми на кнопку выше! 👇
+    </p>
+</section>
+
+<!-- Скрипт для случайных комплиментов -->
+<script>
+    const compliments = [
+        "Ты у меня самая милая, просто золотце мое 😊",
+        "Ой, а ты знала что мы с тобой до конца жизни? Это вообще то факт. ❤️",
+        "У тебя невероятно красивые глаза! ✨",
+        "Рядом с тобой весь мир останавливается. 🥰",
+        "Твой голос - музыка для моих ушей. 🎶",
+        "Ты вдохновляешь меня становиться лучше каждый день! 🌟",
+        "Каждая минута с тобой бесценна. 💖",
+        "Ты потрясающая, как минимум потому что ты есть! 🌸"
+    ];
+
+    const btn = document.getElementById('compliment-btn');
+    const textField = document.getElementById('compliment-text');
+
+    btn.addEventListener('click', () => {
+        // Выбираем случайный комплимент из массива
+        const randomIndex = Math.floor(Math.random() * compliments.length);
+        const randomCompliment = compliments[randomIndex];
+
+        // Плавное исчезновение, смена текста и появление
+        textField.style.opacity = '0';
+        setTimeout(() => {
+            textField.textContent = randomCompliment;
+            textField.style.opacity = '1';
+        }, 150);
+    });
+</script>
     <footer class="py-8 text-center text-xs text-stone-400">
       Сделано с любовью специально для тебя
     </footer>
+    <!-- Скрипт мини-игры "Поймай сердечко" -->
+<script>
+    function createHeart() {
+        const heart = document.createElement('div');
+        heart.classList.add('falling-heart');
+        
+        // Случайные эмодзи сердечек и милых символов
+        const heartsSymbols = ['❤️', '💖', '💘', '✨', '💕', '🤍'];
+        heart.textContent = heartsSymbols[Math.floor(Math.random() * heartsSymbols.length)];
+        
+        // Случайная позиция по горизонтали, размер и скорость падения
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.fontSize = (Math.random() * 1.5 + 1) + 'rem';
+        
+        const duration = Math.random() * 3 + 3; // от 3 до 6 секунд
+        heart.style.animationDuration = duration + 's';
+
+        document.body.appendChild(heart);
+
+        // Клик по сердечку (лопаем его с эффектом)
+        heart.addEventListener('click', () => {
+            heart.style.transform = 'scale(1.5)';
+            heart.style.opacity = '0';
+            setTimeout(() => heart.remove(), 200);
+        });
+
+        // Удаляем элемент после завершения анимации
+        setTimeout(() => {
+            heart.remove();
+        }, duration * 1000);
+    }
+
+    // Запускаем появление нового сердечка каждые 400 миллисекунд
+    setInterval(createHeart, 400);
+</script>
+
+
 </body>
 </html>
